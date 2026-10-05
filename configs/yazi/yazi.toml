@@ -1,0 +1,53 @@
+[mgr]
+# Больше места для чтения preview в панели Herdr.
+ratio = [1, 2, 4]
+show_hidden = true
+# Мышь выключена. Любое непустое значение включает у терминала режим ?1003
+# (сообщать о каждом движении курсора); в панели Herdr эти последовательности иногда
+# приходят разорванными, и Yazi читает их хвост как клавиши: ";" открывает Shell,
+# цифры переключают вкладки. Управление — только клавиатурой.
+mouse_events = []
+
+# git.yazi: показывать git-статус файлов в списке
+[[plugin.prepend_fetchers]]
+url   = "*"
+run   = "git"
+group = "git"
+
+[[plugin.prepend_fetchers]]
+url   = "*/"
+run   = "git"
+group = "git"
+
+# Markdown в превью: glow со своим стилем без значков # (~/.config/yazi/glow/style.json).
+# Цвета стиля — номера палитры терминала, поэтому превью само следует теме Ghostty
+# (Catppuccin Latte днём, Mocha ночью). $w — ширина превью.
+# </dev/null обязателен: без закрытого stdin glow может ждать ввод и превью зависает.
+[[plugin.prepend_previewers]]
+url = "*.{md,markdown}"
+run = 'piper -- CLICOLOR_FORCE=1 glow -w=$w -s="$HOME/.config/yazi/glow/style.json" "$1" </dev/null'
+
+# дерево папки (3 уровня) в превью через eza
+[[plugin.prepend_previewers]]
+url = "*/"
+run = 'piper -- eza -TL=3 --color=always --icons=always --group-directories-first --no-quotes "$1"'
+
+# TUI-вьюверы для структурированных файлов (block: yazi уступает терминал)
+[opener]
+jless = [
+  { run = "jless %s", desc = "jless (JSON)", for = "unix", block = true },
+]
+csvlens = [
+  { run = "csvlens %s", desc = "csvlens (CSV)", for = "unix", block = true },
+]
+# Markdown на весь экран: прокрутка, / — поиск, q — назад в Yazi.
+read = [
+  { run = '"$HOME/.config/yazi/scripts/md-read.sh" %s', desc = "Читать (glow)", for = "unix", block = true },
+]
+
+[open]
+prepend_rules = [
+  { url = "*.{md,markdown}", use = [ "read", "edit" ] },
+  { url = "*.json", use = [ "jless", "edit" ] },
+  { url = "*.csv",  use = [ "csvlens", "edit" ] },
+]

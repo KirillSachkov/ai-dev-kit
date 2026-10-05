@@ -1,0 +1,156 @@
+# Перезагрузить без перезапуска: Ctrl+B, затем Shift+R (или `herdr server reload-config`)
+# Полный список дефолтов: `herdr --default-config`
+# Проверить синтаксис: `herdr config check`
+# Откатить все хоткеи к заводским: `herdr config reset-keys`
+
+onboarding = false
+
+# ══════════════════════════════════════════════════════════
+#  ХОТКЕИ
+# ══════════════════════════════════════════════════════════
+#
+#  Модель простая, слоёв ровно три:
+#
+#    Cmd + что-то        окно терминала Ghostty (вкладки, шрифт, копипаст)
+#    Ctrl + `            выпадающий quick terminal Ghostty, глобально по macOS
+#    Ctrl+B, затем ...   herdr (воркспейсы, вкладки, панели, агенты)
+#
+#  Ctrl+B это ПРЕФИКС. Он ничего не делает сам по себе: нажал, отпустил,
+#  herdr перехватил клавиатуру на один удар, следующая клавиша уходит ему,
+#  а не программе внутри панели. То есть "Ctrl+B V" это два отдельных
+#  нажатия подряд, зажимать одновременно не надо.
+#
+#  Единственное исключение: Ctrl+Alt+стрелки работают сразу, без префикса.
+#  Переключение фокуса между панелями делаешь десятки раз в час, префикс там
+#  только мешает.
+#
+#  Забыл хоткей: Ctrl+B, затем ? покажет всю шпаргалку прямо в herdr.
+
+[keys]
+prefix = "ctrl+b"
+
+# ── Помощь и служебное ────────────────────────────────────
+help = "prefix+?"                  # шпаргалка по всем хоткеям, начинай отсюда
+settings = "prefix+s"              # настройки herdr
+reload_config = "prefix+shift+r"   # перечитать этот файл
+detach = "prefix+q"                # отцепиться от сессии, агенты продолжают работать
+
+# ── Панели: движение фокуса (БЕЗ префикса) ────────────────
+# Единственные прямые хоткеи во всей раскладке. Cmd+Alt+стрелки Ghostty пересылает сюда же
+# (keybind в ~/.config/ghostty/config).
+focus_pane_left = "ctrl+alt+left"
+focus_pane_down = "ctrl+alt+down"
+focus_pane_up = "ctrl+alt+up"
+focus_pane_right = "ctrl+alt+right"
+cycle_pane_next = "prefix+tab"
+cycle_pane_previous = "prefix+shift+tab"
+
+# ── Панели: создать, убрать, растянуть ────────────────────
+split_vertical = "prefix+v"        # разрезать панель, соседняя встанет рядом
+split_horizontal = "prefix+minus"  # разрезать панель, соседняя встанет снизу
+close_pane = "prefix+x"            # закрыть текущую панель
+zoom = "prefix+z"                  # развернуть панель на весь экран и обратно
+resize_mode = "prefix+r"           # режим изменения размера, дальше стрелки
+rename_pane = "prefix+shift+p"
+edit_scrollback = "prefix+e"       # открыть историю вывода панели в редакторе
+
+# ── Вкладки ───────────────────────────────────────────────
+new_tab = "prefix+c"                 # новая вкладка; агента набери в ней: claude или codex
+next_tab = "prefix+n"
+previous_tab = "prefix+p"
+switch_tab = "prefix+1..9"         # Ctrl+B, затем цифра
+rename_tab = "prefix+shift+t"
+close_tab = "prefix+shift+x"
+
+# ── Воркспейсы (проекты) ──────────────────────────────────
+workspace_picker = "prefix+w"      # список всех воркспейсов, главный навигатор
+new_workspace = "prefix+shift+n"
+rename_workspace = "prefix+shift+w"
+close_workspace = "prefix+alt+x"        # x-семейство закрытия: x панель, Shift+X вкладка
+previous_workspace = "prefix+shift+left"
+next_workspace = "prefix+shift+right"
+
+# ── Агенты ────────────────────────────────────────────────
+goto = "prefix+g"                  # режим навигации: дальше просто стрелки
+focus_agent = "prefix+alt+1..9"    # прыгнуть на агента по номеру в сайдбаре
+previous_agent = "prefix+comma"
+next_agent = "prefix+period"
+toggle_sidebar = "prefix+b"        # свернуть или развернуть левый сайдбар
+open_notification_target = "prefix+o"  # прыгнуть туда, откуда прилетело уведомление
+
+# ── Git worktree ──────────────────────────────────────────
+new_worktree = "prefix+shift+g"    # новая ветка в своём worktree, отдельным space под проектом
+open_worktree = "prefix+alt+g"     # список worktree этого проекта: открыть или перейти
+remove_worktree = "prefix+alt+d"   # удалить worktree с подтверждением; ветку не удаляет
+
+# ══════════════════════════════════════════════════════════
+#  СВОИ КОМАНДЫ И ПЛАГИНЫ
+# ══════════════════════════════════════════════════════════
+# type = "popup" открывает временное модальное окно поверх раскладки
+# type = "pane"  открывает временную панель и закрывает её по выходу команды
+# type = "shell" запускает в фоне без окна
+# type = "plugin_action" дёргает действие плагина
+
+# Файлы: Ctrl+B F — Yazi, Ctrl+B D — reviewr. Памятка: ~/.config/herdr/FILES.md
+
+[theme]
+# Как Ghostty: днём Latte, ночью Mocha, вслед за macOS.
+name = "catppuccin"
+auto_switch = true
+dark_name = "catppuccin"
+light_name = "catppuccin-latte"
+
+[ui]
+
+agent_panel_sort = "spaces"
+show_agent_labels_on_pane_borders = true
+# Не спрашивать имя при создании вкладки: Ctrl+B C делает её сразу.
+# Переименовать потом можно через Ctrl+B, Shift+T.
+prompt_new_tab_name = false
+
+status_indicators = "dots"
+[ui.toast]
+delivery = "herdr"
+
+# ══════════════════════════════════════════════════════════
+#  ЭКСПЕРИМЕНТАЛЬНОЕ
+# ══════════════════════════════════════════════════════════
+
+[experimental]
+# Пока висит префикс-режим, macOS временно переключается на ABC.
+# Без этого на русской раскладке "Ctrl+B, затем W" превращается в
+# "Ctrl+B, затем Ц" и herdr тебя не понимает. Выходишь из режима,
+# раскладка возвращается сама.
+switch_ascii_input_source_in_prefix = true
+
+pane_history = false
+
+[ui.sound]
+enabled = true
+
+# ══════════════════════════════════════════════════════════
+#  PLUGINS (решение 93)
+# ══════════════════════════════════════════════════════════
+
+[[keys.command]]
+key = "prefix+t"
+type = "plugin_action"
+command = "herdr-navigator.open"
+description = "Поиск: проекты, сессии, агенты, каталоги"
+
+# reviewr: diff агента поверх вкладки на весь экран, комментарии к строкам уходят агенту (s).
+# Нужен git-репозиторий. Панель вне git (например, ~/Work) получает уведомление, а не
+# молчание plugin. Настройки: herdr/reviewr.toml.
+[[keys.command]]
+key = "prefix+d"
+type = "shell"
+command = "H=\"${HERDR_BIN_PATH:-herdr}\"; if git -C \"${HERDR_ACTIVE_PANE_CWD:-.}\" rev-parse --git-dir >/dev/null 2>&1; then \"$H\" plugin action invoke toggle --plugin persiyanov.reviewr; else \"$H\" notification show \"Review: здесь нет git\" --body \"Панель в ${HERDR_ACTIVE_PANE_CWD:-?}. Открой space проекта: Ctrl+B T\"; fi"
+description = "reviewr: review изменений в папке панели"
+
+# Yazi: файлы и картинки поверх вкладки на весь экран; q закрывает. Папка — активной панели.
+# Картинки рисует протокол Kitty: Herdr передаёт его в Ghostty. Настройки: ~/.config/yazi.
+[[keys.command]]
+key = "prefix+f"
+type = "pane"
+command = "PATH=\"$PATH:/opt/homebrew/bin\" exec yazi"
+description = "Yazi: файлы и картинки"

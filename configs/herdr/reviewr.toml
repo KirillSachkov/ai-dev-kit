@@ -1,0 +1,9 @@
+# reviewr: ~/.config/herdr/plugins/config/persiyanov.reviewr/config.toml — ссылка на этот файл.
+# Все ключи: https://github.com/persiyanov/herdr-reviewr#configuration
+# Агент в worktree делает commit, поэтому review по умолчанию — вся ветка от main.
+default_scope = "branch"
+# Поверх текущей вкладки на весь экран; q или Ctrl+B D закрывает. Сам в новом worktree
+# не открывается: auto-open работает только для split и tab.
+toggle_placement = "overlay"
+# Markdown сразу отформатирован; m — исходник.
+markdown_view = "rendered"

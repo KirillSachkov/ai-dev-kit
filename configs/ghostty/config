@@ -1,0 +1,125 @@
+# ~/.config/ghostty/config — собрано под себя. Перезагрузка конфига: Cmd+Shift+,
+
+# ── Тема ───────────────────────────────────────────────
+# Авто-переключение по системной теме macOS (светлая/тёмная).
+theme = light:Catppuccin Latte,dark:Catppuccin Mocha
+# Сменить вручную: закомментируй строку выше, раскомментируй нужную
+# (любая из 463 тем; живое превью — `ghostty +list-themes`):
+# theme = Tokyo Night
+# theme = Gruvbox Dark
+# theme = Kanagawa Wave
+# theme = Dracula
+# theme = Nord
+
+# ── Шрифт (JetBrains Mono + лигатуры) — тест ───────────
+font-family = "JetBrainsMono Nerd Font Mono"
+# Откат: закомментируй строку выше, раскомментируй следующую
+# font-family = "FiraCode Nerd Font Mono"
+font-size = 14
+# Лигатуры включены по умолчанию. Выключить: font-feature = -calt -liga -dlig
+
+# ── Окно (сплошной фон + отступы) ──────────────────────
+background-opacity = 1
+window-padding-x = 12
+window-padding-y = 12
+window-padding-balance = true
+macos-titlebar-style = tabs
+window-colorspace = display-p3
+window-save-state = always
+# Захочешь «стекло» потом: background-opacity = 0.92 и background-blur-radius = 20
+
+# ── Курсор ─────────────────────────────────────────────
+cursor-style = block
+cursor-style-blink = false
+
+# ── Поведение (power-user) ─────────────────────────────
+# Alt+←/→ — переход по словам
+macos-option-as-alt = true
+# выделил мышью — текст сразу в буфере
+copy-on-select = clipboard
+clipboard-trim-trailing-spaces = true
+mouse-hide-while-typing = true
+# ~95 МБ истории прокрутки (дефолт 10 МБ)
+scrollback-limit = 100000000
+shell-integration-features = cursor,sudo,title
+# закрывать вкладки/сплиты/окна (Cmd+W, Cmd+Shift+W) без переспрашивания
+confirm-close-surface = false
+
+# ── Хоткеи (только то, чего нет в дефолтах macOS) ──────
+# Выпадающий quick-terminal (как hotkey-окно в iTerm):
+keybind = global:ctrl+grave_accent=toggle_quick_terminal
+quick-terminal-position = top
+quick-terminal-animation-duration = 0.1
+
+# ── Раскладко-независимые хоткеи (работают и на русской раскладке) ──
+# Используют физические W3C-коды клавиш (KeyT и т.п.) — срабатывают по
+# положению клавиши, независимо от того, какой символ она печатает.
+keybind = super+KeyT=new_tab
+keybind = super+KeyW=close_surface
+keybind = super+alt+KeyW=close_tab:this
+keybind = super+shift+KeyW=close_window
+keybind = super+KeyN=new_window
+keybind = super+KeyD=new_split:right
+keybind = super+shift+KeyD=new_split:down
+keybind = super+BracketLeft=goto_split:previous
+keybind = super+BracketRight=goto_split:next
+keybind = super+shift+BracketLeft=previous_tab
+keybind = super+shift+BracketRight=next_tab
+keybind = super+KeyK=clear_screen
+keybind = super+KeyC=copy_to_clipboard
+keybind = super+KeyV=paste_from_clipboard
+keybind = super+shift+KeyV=paste_from_selection
+keybind = super+ctrl+Equal=equalize_splits
+keybind = super+Equal=increase_font_size:1
+keybind = super+Minus=decrease_font_size:1
+keybind = super+shift+Comma=reload_config
+keybind = global:ctrl+Backquote=toggle_quick_terminal
+
+# Cmd+Option+стрелки — фокус между панелями herdr. Ghostty шлёт то же, что Ctrl+Option+стрелки
+# (CSI 1;7 = Ctrl+Alt); дефолтный goto_split Ghostty здесь не нужен: сплиты делает только herdr.
+keybind = super+alt+arrow_left=text:\x1b[1;7D
+keybind = super+alt+arrow_right=text:\x1b[1;7C
+keybind = super+alt+arrow_up=text:\x1b[1;7A
+keybind = super+alt+arrow_down=text:\x1b[1;7B
+
+# ── Вкладки и вставка ──────────────────────────────────
+# Переименовать текущую вкладку (F2 или Cmd+Shift+I) — спросит имя.
+keybind = f2=prompt_tab_title
+keybind = super+shift+KeyI=prompt_tab_title
+# Ctrl+V шлёт приложению байт Ctrl+V (0x16) — чтобы вставка скриншота
+# в AI-CLI работала и на русской раскладке (физическая клавиша V).
+keybind = ctrl+KeyV=text:\x16
+# Ctrl+C шлёт стандартный ETX (0x03) по физической клавише C независимо
+# от раскладки: interrupt в shell и close/cancel в терминальных TUI, включая Yazi.
+keybind = ctrl+KeyC=text:\x03
+# Ctrl+B шлёт байт 0x02 — это префикс herdr. Тот же приём, что и выше:
+# физическая клавиша B, поэтому префикс срабатывает и на русской раскладке
+# (иначе Ctrl+И до herdr не долетает). Вторую клавишу префикс-режима
+# добирает сам herdr через switch_ascii_input_source_in_prefix.
+keybind = ctrl+KeyB=text:\x02
+# Остальные Ctrl+буква — так же по физической клавише, чтобы сочетания работали на русской
+# раскладке во всех программах (nvim, lazygit, shell, агенты). Ctrl+I и Ctrl+M не трогаем:
+# это Tab и Enter.
+keybind = ctrl+KeyA=text:\x01
+keybind = ctrl+KeyD=text:\x04
+keybind = ctrl+KeyE=text:\x05
+keybind = ctrl+KeyF=text:\x06
+keybind = ctrl+KeyG=text:\x07
+keybind = ctrl+KeyH=text:\x08
+keybind = ctrl+KeyJ=text:\x0a
+keybind = ctrl+KeyK=text:\x0b
+keybind = ctrl+KeyL=text:\x0c
+keybind = ctrl+KeyN=text:\x0e
+keybind = ctrl+KeyO=text:\x0f
+keybind = ctrl+KeyP=text:\x10
+keybind = ctrl+KeyQ=text:\x11
+keybind = ctrl+KeyR=text:\x12
+keybind = ctrl+KeyS=text:\x13
+keybind = ctrl+KeyT=text:\x14
+keybind = ctrl+KeyU=text:\x15
+keybind = ctrl+KeyW=text:\x17
+keybind = ctrl+KeyX=text:\x18
+keybind = ctrl+KeyY=text:\x19
+keybind = ctrl+KeyZ=text:\x1a
+# Shift+Enter — перенос строки в промпте Claude Code / Codex (а не отправка).
+keybind = shift+enter=text:\n

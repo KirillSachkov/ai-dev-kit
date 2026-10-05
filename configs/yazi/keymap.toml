@@ -1,0 +1,143 @@
+[[mgr.prepend_keymap]]
+on   = "l"
+run  = "plugin smart-enter"
+desc = "Войти в папку или открыть файл"
+
+# Развернуть preview на всю ширину и обратно: удобно читать длинные файлы.
+[[mgr.prepend_keymap]]
+on   = "T"
+run  = "plugin toggle-pane max-preview"
+desc = "Развернуть preview / вернуть"
+
+[[mgr.prepend_keymap]]
+on   = "Е"
+run  = "plugin toggle-pane max-preview"
+desc = "Развернуть preview / вернуть (RU: T)"
+
+# lazygit в текущей папке (--block: yazi уступает терминал, вернётся по выходу)
+[[mgr.prepend_keymap]]
+on   = [ "g", "l" ]
+run  = "shell --block lazygit"
+desc = "Открыть lazygit здесь"
+
+# Русские дубли частых manager-команд по физическому положению QWERTY-клавиш.
+# Ctrl-комбинации нормализуются в Ghostty; permanent delete намеренно не дублируется.
+[[mgr.prepend_keymap]]
+on   = "й"
+run  = "quit"
+desc = "Выйти (RU: q)"
+
+[[mgr.prepend_keymap]]
+on   = "л"
+run  = "arrow prev"
+desc = "Предыдущий файл (RU: k)"
+
+[[mgr.prepend_keymap]]
+on   = "о"
+run  = "arrow next"
+desc = "Следующий файл (RU: j)"
+
+[[mgr.prepend_keymap]]
+on   = "р"
+run  = "leave"
+desc = "Родительский каталог (RU: h)"
+
+[[mgr.prepend_keymap]]
+on   = "д"
+run  = "plugin smart-enter"
+desc = "Войти в папку или открыть файл (RU: l)"
+
+[[mgr.prepend_keymap]]
+on   = "Л"
+run  = "seek -5"
+desc = "Прокрутить preview вверх (RU: K)"
+
+[[mgr.prepend_keymap]]
+on   = "О"
+run  = "seek 5"
+desc = "Прокрутить preview вниз (RU: J)"
+
+[[mgr.prepend_keymap]]
+on   = "щ"
+run  = "open"
+desc = "Открыть выбранное (RU: o)"
+
+[[mgr.prepend_keymap]]
+on   = "м"
+run  = "visual_mode"
+desc = "Visual selection (RU: v)"
+
+[[mgr.prepend_keymap]]
+on   = "н"
+run  = "yank"
+desc = "Копировать выбранное (RU: y)"
+
+[[mgr.prepend_keymap]]
+on   = "ч"
+run  = "yank --cut"
+desc = "Вырезать выбранное (RU: x)"
+
+[[mgr.prepend_keymap]]
+on   = "з"
+run  = "paste"
+desc = "Вставить (RU: p)"
+
+[[mgr.prepend_keymap]]
+on   = "в"
+run  = "remove"
+desc = "Переместить в корзину (RU: d)"
+
+[[mgr.prepend_keymap]]
+on   = "ф"
+run  = "create"
+desc = "Создать файл или каталог (RU: a)"
+
+[[mgr.prepend_keymap]]
+on   = "к"
+run  = "rename --cursor=before_ext"
+desc = "Переименовать (RU: r)"
+
+[[mgr.prepend_keymap]]
+on   = "ы"
+run  = "search --via=fd"
+desc = "Поиск файлов (RU: s)"
+
+[[mgr.prepend_keymap]]
+on   = "Ы"
+run  = "search --via=rg"
+desc = "Поиск по содержимому (RU: S)"
+
+[[mgr.prepend_keymap]]
+on   = "я"
+run  = "plugin fzf"
+desc = "Перейти через fzf (RU: z)"
+
+[[mgr.prepend_keymap]]
+on   = "а"
+run  = "filter --smart"
+desc = "Фильтр файлов (RU: f)"
+
+[[mgr.prepend_keymap]]
+on   = "т"
+run  = "find_arrow"
+desc = "Следующее найденное (RU: n)"
+
+[[mgr.prepend_keymap]]
+on   = "Т"
+run  = "find_arrow --previous"
+desc = "Предыдущее найденное (RU: N)"
+
+[[mgr.prepend_keymap]]
+on   = "ц"
+run  = "tasks:show"
+desc = "Задачи Yazi (RU: w)"
+
+[[mgr.prepend_keymap]]
+on   = [ "п", "п" ]
+run  = "arrow top"
+desc = "В начало списка (RU: g g)"
+
+[[mgr.prepend_keymap]]
+on   = [ "п", "д" ]
+run  = "shell --block lazygit"
+desc = "Открыть lazygit здесь (RU: g l)"

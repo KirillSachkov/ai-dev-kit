@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Herdr Navigator",
+    "plugin_id": "herdr-navigator",
+    "version": "0.3.3",
+    "enabled": true,
+    "repo": "https://github.com/thanhdat77/herdr-navigator",
+    "ref": "v0.3.3"
+  },
+  {
+    "name": "reviewr",
+    "plugin_id": "persiyanov.reviewr",
+    "version": "0.43.0",
+    "enabled": true,
+    "repo": "https://github.com/persiyanov/herdr-reviewr",
+    "ref": "v0.43.0"
+  }
+]

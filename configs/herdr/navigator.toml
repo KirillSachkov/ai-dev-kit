@@ -1,0 +1,38 @@
+# Каталоги проектов для поиска. Archive и Inbox не входят.
+# Проба рабочего пространства 2026-10-02 (решение 79).
+
+[[roots]]
+path = "~/Work/Products"
+max_depth = 3
+
+[[roots]]
+path = "~/Work/Content"
+max_depth = 3
+
+[[roots]]
+path = "~/Work/Tools"
+max_depth = 2
+
+[[roots]]
+path = "~/Work/Business"
+max_depth = 2
+
+[[roots]]
+path = "~/Work/Courses"
+max_depth = 2
+
+[[roots]]
+path = "~/Work/Labs"
+max_depth = 2
+
+[[roots]]
+path = "~/Work/Career"
+max_depth = 2
+
+[[roots]]
+path = "~/Work/Personal"
+max_depth = 2
+
+[[roots]]
+path = "~/.herdr/worktrees"
+max_depth = 3
