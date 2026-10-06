@@ -4,14 +4,14 @@
 # Авто-переключение по системной теме macOS (светлая/тёмная).
 theme = light:Catppuccin Latte,dark:Catppuccin Mocha
 # Сменить вручную: закомментируй строку выше, раскомментируй нужную
-# (любая из 463 тем; живое превью — `ghostty +list-themes`):
+# (доступные темы: `ghostty +list-themes`):
 # theme = Tokyo Night
 # theme = Gruvbox Dark
 # theme = Kanagawa Wave
 # theme = Dracula
 # theme = Nord
 
-# ── Шрифт (JetBrains Mono + лигатуры) — тест ───────────
+# ── Шрифт (JetBrains Mono + лигатуры) ───────────
 font-family = "JetBrainsMono Nerd Font Mono"
 # Откат: закомментируй строку выше, раскомментируй следующую
 # font-family = "FiraCode Nerd Font Mono"
@@ -39,6 +39,8 @@ macos-option-as-alt = true
 copy-on-select = clipboard
 clipboard-trim-trailing-spaces = true
 mouse-hide-while-typing = true
+# Множители прокрутки для трекпада и колеса мыши.
+mouse-scroll-multiplier = precision:1,discrete:1
 # ~95 МБ истории прокрутки (дефолт 10 МБ)
 scrollback-limit = 100000000
 shell-integration-features = cursor,sudo,title

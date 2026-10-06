@@ -82,8 +82,18 @@
 - [jevgrep](https://github.com/dzhng/jevgrep)
 - [agent-router](https://github.com/nidhi-singh02/agent-router)
 
+### Сайты инструментов из прежнего каталога
+
+- [Neovim](https://neovim.io)
+- [VS Code](https://code.visualstudio.com)
+- [Obsidian](https://obsidian.md)
+- [Cursor](https://cursor.com)
+- [Conductor](https://www.conductor.build)
+- [Raycast](https://www.raycast.com)
+- [Jev](https://typesafe.ai/blog/introducing-system-one-models-and-jev)
+
 ## Настройки автора
 
-Снимок конфигов подготовлен 4 октября 2026 года. [Описание и перенос](../configs/README.md). В настройках Herdr также используется [Navigator](https://github.com/thanhdat77/herdr-navigator).
+Конфиги к обзору подготовлены 4 октября 2026 года. [Снимок к обзору](https://github.com/KirillSachkov/ai-dev-kit/tree/2fb2282839632059733d06922a0ac39d1c22b30c/configs) сохранён отдельно от [текущих конфигов](../configs/README.md). В настройках Herdr также используется [Navigator](https://github.com/thanhdat77/herdr-navigator).
 
 Эта подборка сохраняет состав обзора. Новые инструменты добавляются в текущий каталог, а материалы следующего выпуска в отдельный файл.

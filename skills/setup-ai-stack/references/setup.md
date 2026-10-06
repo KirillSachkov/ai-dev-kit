@@ -1,30 +1,23 @@
 # Памятка настройки
 
-[Публичный репозиторий](https://github.com/KirillSachkov/ai-dev-kit) содержит конфиги и README инструментов.
+Конфиги [набора Кирилла Сачкова](https://github.com/KirillSachkov/ai-dev-kit/blob/main/configs/README.md) сверены на macOS 6 октября 2026 года. [YouTube автора](https://www.youtube.com/@SachkovDev) · [Telegram](https://t.me/sachkov_blog).
 
-Конфиги взяты из окружения Кирилла Сачкова на macOS 4 октября 2026 года. [Канал автора](https://www.youtube.com/@SachkovDev) и [Telegram](https://t.me/sachkov_blog).
-
-| Инструмент | Папка в клоне | Обычное расположение у пользователя |
+| Компонент | Файлы набора | Где искать действующие настройки |
 |---|---|---|
-| Ghostty | `configs/ghostty/` | `$XDG_CONFIG_HOME/ghostty/` или `~/.config/ghostty/`; на macOS также Application Support |
-| Herdr | `configs/herdr/` | `~/.config/herdr/` |
-| Orca | `configs/orca/` | Settings приложения; JSON набора является памяткой |
-| Codex | `configs/codex/` | `~/.codex/config.toml`; учти `CODEX_HOME` |
-| Claude Code | `configs/claude/` | `~/.claude/settings.json`; учти пользовательские и проектные настройки |
-| Neovim | `configs/nvim/` | `~/.config/nvim/`; учти XDG и профиль редактора |
-| Yazi | `configs/yazi/` | `~/.config/yazi/`; учти XDG |
-| Hunk | `configs/hunk/` | `~/.config/hunk/` |
-| zsh | `configs/zsh/` | Фрагмент для `.zshrc`; учти `ZDOTDIR` |
+| Ghostty | [configs/ghostty](https://github.com/KirillSachkov/ai-dev-kit/tree/main/configs/ghostty) | XDG `ghostty/`; на macOS также Application Support |
+| Herdr | [configs/herdr](https://github.com/KirillSachkov/ai-dev-kit/tree/main/configs/herdr) | Обычно `~/.config/herdr/`; учитывай `HERDR_CONFIG_PATH` |
+| micro | [configs/micro](https://github.com/KirillSachkov/ai-dev-kit/tree/main/configs/micro) | XDG `micro/`; учитывай `MICRO_CONFIG_HOME` и `-config-dir` |
+| Yazi | [configs/yazi](https://github.com/KirillSachkov/ai-dev-kit/tree/main/configs/yazi) | XDG `yazi/`; учитывай `YAZI_CONFIG_HOME` |
 
-Это ориентиры. Перед записью выясни фактически используемые пути. Читай `configs/README.md` в клоне и README выбранного инструмента.
+Это ориентиры. Выясни используемый путь до записи. На другой ОС сверяй доступность выбранных параметров с официальной документацией.
 
-## Особенности снимка
+## Особенности компонентов
 
-- Ghostty использует Catppuccin Latte/Mocha и JetBrainsMono Nerd Font Mono. Сначала проверь доступность шрифта и конфликт клавиш с текущими настройками. На macOS позднее загруженный конфиг из Application Support может перекрыть XDG-конфиг. [Документация](https://ghostty.org/docs/config).
-- Herdr использует Ctrl+B. Navigator и reviewr устанавливаются отдельно. `plugins.json` перечисляет плагины, но не заменяет внутренний реестр приложения. Проверь пути проектов в `navigator.toml`.
-- Codex и Orca содержат режим автора с полными разрешениями. В zsh-фрагменте alias `cld` запускает Claude Code без подтверждений. Перед переносом сохраняй выбранный пользователем режим.
-- Orca 1.4.204 передана набором выбранных полей. Поддержка автоматического импорта не подтверждена.
-- Neovim основан на LazyVim. Команда «Места агентов» зависит от отсутствующего в наборе `herdr-agent-context`. Не объявляй эту команду настроенной без помощника.
-- Yazi использует плагины из `package.toml`, а превью используют glow, eza, jless и csvlens. Скрипт `scripts/md-read.sh` должен быть исполняемым.
+- Ghostty использует Catppuccin Latte/Mocha, JetBrainsMono Nerd Font Mono 14 и `mouse-scroll-multiplier = precision:1,discrete:1`. Шрифт нужно проверить отдельно. На macOS Application Support может перекрывать XDG-конфиг. Для выбранного файла доступен `ghostty +validate-config --config-file=<путь>`. [Документация](https://ghostty.org/docs/config).
+- Herdr использует Ctrl+B и автоматические темы Catppuccin. `ui.sidebar.agents.rows` показывает состояние, проект и вкладку одной строкой. Проверка `HERDR_CONFIG_PATH=<путь> herdr config check` позволяет проверить отдельный файл без записи в живой конфиг. [Документация](https://herdr.dev/docs/configuration/).
+- Navigator и reviewr являются необязательными публичными плагинами Herdr. `plugins.json` служит памяткой, а не реестром для импорта. Корни в `navigator.toml` нужно заменить своими. Установка и расположение конфигов описаны в README Herdr.
+- Herdr запускает Yazi с `EDITOR=micro VISUAL=micro`. Если пользователь сохраняет редактор, замени эти значения его командой или убери их для наследования окружения.
+- micro использует обычные настройки и адаптацию Catppuccin Mocha с MIT-лицензией. Копируй выбранную тему вместе с указанием автора. Для пробы используй `micro -config-dir <временный каталог> <тестовый файл>`. [Оригинальная тема](https://github.com/catppuccin/micro).
+- Yazi использует публичные плагины из `package.toml`. Markdown-превью требует glow и piper; открытие JSON и CSV требует jless и csvlens. Отдельной темы Yazi в наборе нет. Пути к стилю glow учитывают `YAZI_CONFIG_HOME` и XDG. [Документация](https://yazi-rs.github.io/docs/configuration/overview/).
 
-После адаптации конфиги пользователя будут отличаться от снимка. Опиши существенные отличия, чтобы человек мог поддерживать свой сетап.
+Снимок не заменяет проверку выбранного поведения. Полная установка на чистую машину пока не проверена.

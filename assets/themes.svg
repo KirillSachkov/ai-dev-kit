@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="460" viewBox="0 0 1200 460" role="img" aria-labelledby="title desc">
+<title id="title">AI Dev Kit: Catppuccin Latte и Mocha</title>
+<desc id="desc">Иллюстрация двух палитр с примерами цветов кода. Светлая Latte и тёмная Mocha. Это иллюстрация тем, а не скриншот приложения.</desc>
+<rect width="1200" height="460" rx="24" fill="#11111b"/>
+<text x="36" y="48" fill="#cdd6f4" font-family="sans-serif" font-size="18" letter-spacing="2">AI DEV KIT / КИРИЛЛ САЧКОВ</text>
+<text x="1164" y="48" text-anchor="end" fill="#a6adc8" font-family="sans-serif" font-size="14">ИЛЛЮСТРАЦИЯ ТЕМ</text>
+<rect x="24" y="76" width="564" height="320" rx="16" fill="#eff1f5"/>
+<rect x="612" y="76" width="564" height="320" rx="16" fill="#1e1e2e" stroke="#45475a"/>
+<g font-family="sans-serif">
+<text x="52" y="119" font-size="26" font-weight="bold" fill="#4c4f69">Catppuccin Latte</text>
+<text x="640" y="119" font-size="26" font-weight="bold" fill="#cdd6f4">Catppuccin Mocha</text>
+<text x="52" y="146" font-size="15" fill="#6c6f85">Светлый вариант для Ghostty и Herdr</text>
+<text x="640" y="146" font-size="15" fill="#a6adc8">Тёмный вариант для Ghostty, Herdr и micro</text>
+</g>
+<g font-family="monospace" font-size="21">
+<text x="52" y="199" fill="#9ca0b0"># Цвета кода и текста</text>
+<text x="52" y="237" fill="#8839ef">theme <tspan fill="#4c4f69">= </tspan><tspan fill="#40a02b">"Catppuccin Latte"</tspan></text>
+<text x="52" y="275" fill="#1e66f5">font-size <tspan fill="#4c4f69">= </tspan><tspan fill="#fe640b">14</tspan></text>
+<text x="640" y="199" fill="#6c7086"># Цвета кода и текста</text>
+<text x="640" y="237" fill="#cba6f7">theme <tspan fill="#cdd6f4">= </tspan><tspan fill="#a6e3a1">"Catppuccin Mocha"</tspan></text>
+<text x="640" y="275" fill="#89b4fa">font-size <tspan fill="#cdd6f4">= </tspan><tspan fill="#fab387">14</tspan></text>
+</g>
+<g>
+<rect x="52" y="312" width="72" height="42" rx="8" fill="#8839ef"/><rect x="136" y="312" width="72" height="42" rx="8" fill="#1e66f5"/><rect x="220" y="312" width="72" height="42" rx="8" fill="#40a02b"/><rect x="304" y="312" width="72" height="42" rx="8" fill="#fe640b"/><rect x="388" y="312" width="72" height="42" rx="8" fill="#d20f39"/><rect x="472" y="312" width="72" height="42" rx="8" fill="#179299"/>
+<rect x="640" y="312" width="72" height="42" rx="8" fill="#cba6f7"/><rect x="724" y="312" width="72" height="42" rx="8" fill="#89b4fa"/><rect x="808" y="312" width="72" height="42" rx="8" fill="#a6e3a1"/><rect x="892" y="312" width="72" height="42" rx="8" fill="#fab387"/><rect x="976" y="312" width="72" height="42" rx="8" fill="#f38ba8"/><rect x="1060" y="312" width="72" height="42" rx="8" fill="#94e2d5"/>
+</g>
+<text x="36" y="432" fill="#bac2de" font-family="sans-serif" font-size="16">Ghostty · Herdr · micro · Yazi</text>
+<text x="1164" y="432" text-anchor="end" fill="#a6adc8" font-family="sans-serif" font-size="14">Оформление можно перенести отдельно</text>
+</svg>

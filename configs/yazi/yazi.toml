@@ -25,12 +25,7 @@ group = "git"
 # </dev/null обязателен: без закрытого stdin glow может ждать ввод и превью зависает.
 [[plugin.prepend_previewers]]
 url = "*.{md,markdown}"
-run = 'piper -- CLICOLOR_FORCE=1 glow -w=$w -s="$HOME/.config/yazi/glow/style.json" "$1" </dev/null'
-
-# дерево папки (3 уровня) в превью через eza
-[[plugin.prepend_previewers]]
-url = "*/"
-run = 'piper -- eza -TL=3 --color=always --icons=always --group-directories-first --no-quotes "$1"'
+run = 'piper -- CLICOLOR_FORCE=1 glow -w=$w -s="${YAZI_CONFIG_HOME:-${XDG_CONFIG_HOME:-$HOME/.config}/yazi}/glow/style.json" "$1" </dev/null'
 
 # TUI-вьюверы для структурированных файлов (block: yazi уступает терминал)
 [opener]
@@ -40,9 +35,9 @@ jless = [
 csvlens = [
   { run = "csvlens %s", desc = "csvlens (CSV)", for = "unix", block = true },
 ]
-# Markdown на весь экран: прокрутка, / — поиск, q — назад в Yazi.
+# Markdown через внешний $PAGER (по умолчанию less -r), без личного скрипта.
 read = [
-  { run = '"$HOME/.config/yazi/scripts/md-read.sh" %s', desc = "Читать (glow)", for = "unix", block = true },
+  { run = 'glow -p -s="${YAZI_CONFIG_HOME:-${XDG_CONFIG_HOME:-$HOME/.config}/yazi}/glow/style.json" %s', desc = "Читать (glow)", for = "unix", block = true },
 ]
 
 [open]

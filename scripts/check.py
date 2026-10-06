@@ -21,7 +21,26 @@ SECRET = re.compile(
 
 
 def files(root: Path):
-    return sorted(p for p in root.rglob("*") if p.is_file() and not any(x in IGNORED for x in p.relative_to(root).parts))
+    return sorted(p for p in root.rglob("*") if (p.is_symlink() or p.is_file()) and not any(x in IGNORED for x in p.relative_to(root).parts))
+
+
+def discovery_link(path: Path, root: Path):
+    """Only relative aliases to canonical, in-kit skill directories are allowed."""
+    parts = path.relative_to(root).parts
+    if len(parts) != 3 or parts[:2] not in ((".agents", "skills"), (".claude", "skills")):
+        return False
+    target = root / "skills" / parts[2]
+    try:
+        return (
+            not path.readlink().is_absolute()
+            and not target.is_symlink()
+            and target.resolve().is_relative_to(root)
+            and target.is_dir()
+            and (target / "SKILL.md").is_file()
+            and path.resolve() == target.resolve()
+        )
+    except (OSError, RuntimeError):
+        return False
 
 
 def headings(text: str):
@@ -50,7 +69,8 @@ def validate(root: Path):
         relative = path.relative_to(root)
         counts["files"] += 1
         if path.is_symlink():
-            errors.append(f"{relative}: exported file must not be a symlink")
+            if not discovery_link(path, root):
+                errors.append(f"{relative}: only relative skill discovery links are allowed")
             continue
         try:
             text = path.read_text(encoding="utf-8")

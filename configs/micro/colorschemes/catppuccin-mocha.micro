@@ -1,0 +1,48 @@
+# Catppuccin Mocha for micro, adapted by Kirill Sachkov.
+# Original: https://github.com/catppuccin/micro
+# Copyright (c) 2021 Catppuccin. MIT License: ../LICENSE-Catppuccin
+color-link default "#cdd6f4,#1e1e2e"
+
+color-link comment "italic #6c7086"
+color-link identifier "#89b4fa"
+color-link identifier.class "#f9e2af"
+color-link identifier.var "#cdd6f4"
+
+color-link constant "#fab387"
+color-link constant.number "#fab387"
+color-link constant.bool "#fab387"
+color-link constant.string "#a6e3a1"
+color-link constant.string.char "#94e2d5"
+color-link constant.specialChar "#f5c2e7"
+
+color-link statement "#cba6f7"
+color-link symbol "#89dceb"
+color-link symbol.brackets "#cdd6f4"
+color-link symbol.tag "#89b4fa"
+color-link symbol.operator "#89dceb"
+
+color-link preproc "#fab387"
+color-link type "#f9e2af"
+color-link type.keyword "#cba6f7"
+color-link special "#f38ba8"
+color-link underlined "underline #74c7ec"
+
+color-link error "bold #1e1e2e,#f38ba8"
+color-link todo "bold #f5c2e7"
+
+color-link statusline "#1e1e2e,#89b4fa"
+color-link tabbar "#cdd6f4,#313244"
+color-link indent-char "#45475a"
+color-link line-number "#6c7086,#1e1e2e"
+color-link current-line-number "bold #b4befe,#1e1e2e"
+color-link cursor-line "#1e1e2e,#313244"
+color-link color-column "#313244"
+
+color-link gutter-error "#f38ba8"
+color-link gutter-warning "#f9e2af"
+
+color-link diff-added "#a6e3a1"
+color-link diff-modified "#f9e2af"
+color-link diff-deleted "#f38ba8"
+
+color-link match-brace "#1e1e2e,#89dceb"

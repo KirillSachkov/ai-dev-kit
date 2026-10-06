@@ -109,6 +109,10 @@ show_agent_labels_on_pane_borders = true
 prompt_new_tab_name = false
 
 status_indicators = "dots"
+[ui.sidebar.agents]
+# Состояние, проект и вкладка в одной строке.
+rows = [["state_icon", "workspace", "tab"]]
+
 [ui.toast]
 delivery = "herdr"
 
@@ -129,7 +133,7 @@ pane_history = false
 enabled = true
 
 # ══════════════════════════════════════════════════════════
-#  PLUGINS (решение 93)
+#  ПУБЛИЧНЫЕ ПЛАГИНЫ
 # ══════════════════════════════════════════════════════════
 
 [[keys.command]]
@@ -152,5 +156,5 @@ description = "reviewr: review изменений в папке панели"
 [[keys.command]]
 key = "prefix+f"
 type = "pane"
-command = "PATH=\"$PATH:/opt/homebrew/bin\" exec yazi"
+command = "PATH=\"$PATH:/opt/homebrew/bin\" EDITOR=micro VISUAL=micro exec yazi"
 description = "Yazi: файлы и картинки"
