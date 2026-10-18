@@ -1,6 +1,6 @@
 # Project execution procedure
 
-[WORKFLOW.md](../WORKFLOW.md) owns session configuration and routes assigned work to the installed coordinator. This procedure owns project-specific overrides; distributable kit materials remain in `skills/`.
+[WORKFLOW.md](../WORKFLOW.md) owns session configuration and manual stage selection. This procedure governs assigned maintenance and project-specific overrides when a stage is selected; distributable kit materials remain in `skills/`.
 
 ## Start or resume
 
@@ -24,7 +24,7 @@ Before completion verify every acceptance criterion and run final required check
 
 ## Deliver
 
-Complete authorized integration, tracker resolution, handoff, and cleanup under project gates. Deployment requires an assigned deployment scope. This library grants no authority to publish, pay, change accounts, or access secrets; existing owner authorization remains applicable within its scope.
+Complete authorized integration, tracker resolution, handoff, and cleanup under project gates. Deployment requires an assigned deployment scope. Apply the authority boundaries in [AGENTS.md](../AGENTS.md#help-users); existing owner authorization remains applicable within its scope.
 
 Clean up only owned completed resources after preserving evidence and confirming no live worker needs them. Finish after criteria and authorized delivery are verified. If blocked, record completed work, remaining work, and the exact condition for continuation.
 
