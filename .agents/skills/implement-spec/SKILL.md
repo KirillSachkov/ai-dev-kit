@@ -6,6 +6,12 @@ disable-model-invocation: true
 
 You have been provided a spec. This spec should have tickets associated with it, describing how to implement the spec.
 
+An explicit owner request to implement the whole specification invokes this workflow, whether the
+owner names the skill or uses natural language. A request to launch that work in another session
+assigns execution to the destination session; the launcher's responsibility follows its handoff scope.
+Run bounded workers as native subagents under the project's rules. Independent owner sessions
+participate only under an explicit coordination assignment; launching one does not make it a worker.
+
 The issue tracker should have been provided to you. If not, tell the user to run `/setup-matt-pocock-skills`.
 
 The goal is the entire spec implemented on a single **integration branch**, with every ticket resolved the way the issue tracker closes work.

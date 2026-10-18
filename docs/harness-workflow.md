@@ -2,6 +2,8 @@
 
 [WORKFLOW.md](../WORKFLOW.md) owns session configuration and manual stage selection. This procedure governs assigned maintenance and project-specific overrides when a stage is selected; distributable kit materials remain in `skills/`.
 
+For independent session launch, assigned coordination (including monitor-only), and whole-specification invocation, follow the pinned [shared harness contract](https://github.com/KirillSachkov/workspace/blob/0017667f4e7beb5e3b6f8428ae21441496cdfec9/docs/harness-workflow.md#independent-handoff-and-assigned-coordination) and its stage ownership and editorial/engineering routes. The sections below supply project exceptions and delivery rules.
+
 ## Start or resume
 
 Preparing a specification, task list, or report does not assign execution. Use the owner's selected stages, agents, and models; otherwise inherit the active session. Check required skills, dependencies, accesses, and runtime before dependent work. Local work stays in the current runtime; verify Cloud access inside its assigned task. Record unsupported delegation/model selection and resolve it before dependent work.
@@ -12,13 +14,15 @@ Update evidence at dispatch, acceptance, integration, owner decisions, and hando
 
 ## Execute and review
 
+Ordinary library documentation, skill maintenance, research, and material review use focused checks and review of the changed material. They do not invoke whole-specification execution. Explicit whole-specification assignments use implement-spec with the editorial exceptions below; executable tools retain engineering verification.
+
 For editorial assignments, the current checkout has one writer and changes proceed sequentially. This is the project's exception to implement-spec's integration branch and per-worker branch defaults. Read-only exploration and independent review may run concurrently. For a software specification requiring branch isolation, use a temporary integration branch and separate worker worktrees; combine one specification into its final PR and deliver independent assignments separately.
 
 Run bounded implementation, exploration, and review workers as native subagents of the active project task. An isolated worktree or read-only access to another repository does not create an independent owner session. Preserve foreign sessions and resources. If native workers are unavailable, record the limitation and leave independent review pending; resume in a native-capable session.
 
-Each writing task has one worker responsible for implementation, checks, review fixes, and owned-resource cleanup. The coordinator owns dependencies, acceptance, and authorized delivery. Use the installed TDD reference for code behavior; editorial work uses this procedure and meaningful document/behavior checks.
+Each writing task has one worker responsible for implementation, checks, review fixes, and owned-resource cleanup. When coordination is assigned, the lead owns only the dependencies, acceptance, and delivery responsibilities assigned for that task set. Use the installed TDD reference for code behavior; editorial work uses this procedure and meaningful document/behavior checks.
 
-Apply AGENTS checks and checks of changed behavior. Obtain independent per-ticket code-review before acceptance and independent final code-review of the complete result. Keep Standards and Spec axes distinct. Validate findings; commit fixes before affected re-review. A worker completion message alone does not establish acceptance or delivery.
+Apply AGENTS checks and checks of changed behavior. For software/tooling changes and explicitly assigned implementation workflows, obtain independent per-ticket code-review before acceptance and independent final code-review of the complete result. Ordinary editorial maintenance uses focused review; an assignment may require independent Standards/Spec review, as this boundary-maintenance assignment does. Keep Standards and Spec axes distinct. Validate findings; commit fixes before affected re-review. A worker completion message alone does not establish acceptance or delivery.
 
 Before completion verify every acceptance criterion and run final required checks. Record commands, actual results, checked commits or input snapshots, review dispositions, and accessible artifacts in the task/issue. Reuse evidence only while its checked inputs still apply. Repeat affected checks after changed inputs, failures, or unresolved concerns.
 

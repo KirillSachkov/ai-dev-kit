@@ -9,7 +9,7 @@
     ".agents/skills/code-review/SKILL.md": "f9b9a6c74ad7140bc74684c414e129a6d72936cd2e6ad0f37b4b51568d7f828b",
     ".agents/skills/code-review/agents/openai.yaml": "8229ca854e11dc8e6aef2131ee03f31fb1561cf905fab9ccc325180cf3331352",
     ".agents/skills/code-review/references/findings.md": "8d685db5ceb4d62b4952ee021665d502e49f23483ae7b2f98fdf97f03ed4fe6a",
-    ".agents/skills/implement-spec/SKILL.md": "cd5ba121315169b11eb9d7c56a4a3ddf4378331cab6292ad840cd78f015280ca",
+    ".agents/skills/implement-spec/SKILL.md": "f6219d1993fa443122fef8748a09e085038895233b7d5dfbe7bdad4b2509927d",
     ".agents/skills/implement-spec/agents/openai.yaml": "b0d1340b987edddd09d2ebd0207e08c78a95c4aadc7966919b46eefbf1338258",
     ".agents/skills/setup-matt-pocock-skills/SKILL.md": "9d137b9387f8422fa00355a066445c9a7cc2e2e95d1ad45aea8f8daa6b48a76e",
     ".agents/skills/setup-matt-pocock-skills/agents/openai.yaml": "9527de0110541c45712319025155aeab8dc7d77c6ed6e5e83271bab1851ab939",
@@ -23,5 +23,8 @@
     ".agents/skills/tdd/agents/openai.yaml": "ea6f01cf1b8c06a4b0f5b649d74b1b8ce8685e72af1b38d70d877693e092af0b",
     ".agents/skills/tdd/mocking.md": "3ceb807fdf4a47d6a93d4d9a891e5ba6d362a6247bd08adc451feebfc17361ef",
     ".agents/skills/tdd/tests.md": "859f9e592c188fda4fc7277dd180e4ce9c7a2e13f6efe1f6f29eccc9d28c106a"
+  },
+  "file_source_commits": {
+    ".agents/skills/implement-spec/SKILL.md": "0017667f4e7beb5e3b6f8428ae21441496cdfec9"
   }
 }
