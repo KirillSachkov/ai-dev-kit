@@ -1,0 +1,27 @@
+{
+  "source_repository": "https://github.com/KirillSachkov/workspace",
+  "source_commit": "d459183f46290ef74ede4f3eca349ab0682cbd0c",
+  "files_sha256": {
+    ".agents/skills/classify-change/SKILL.md": "089285ae3627a8a9eb2b6982f96ff2f2f0da4e2696241eef6df69fb29cd6e25f",
+    ".agents/skills/classify-change/agents/openai.yaml": "4c87b3cc61bfe31cad74d9efe367eec9f7b6b7658faf0c60e54405e897275fe6",
+    ".agents/skills/classify-change/references/owner-participation.md": "9d6f353905cc749ac7c82cf9d6796b3ad116bb9246d0c0d4f540044d178320af",
+    ".agents/skills/classify-change/references/risk-assessment.md": "80de72be09974c2c79a8b39205628dea925dc5229c841eed84bb3016e458dac9",
+    ".agents/skills/code-review/SKILL.md": "f9b9a6c74ad7140bc74684c414e129a6d72936cd2e6ad0f37b4b51568d7f828b",
+    ".agents/skills/code-review/agents/openai.yaml": "8229ca854e11dc8e6aef2131ee03f31fb1561cf905fab9ccc325180cf3331352",
+    ".agents/skills/code-review/references/findings.md": "8d685db5ceb4d62b4952ee021665d502e49f23483ae7b2f98fdf97f03ed4fe6a",
+    ".agents/skills/implement-spec/SKILL.md": "cd5ba121315169b11eb9d7c56a4a3ddf4378331cab6292ad840cd78f015280ca",
+    ".agents/skills/implement-spec/agents/openai.yaml": "b0d1340b987edddd09d2ebd0207e08c78a95c4aadc7966919b46eefbf1338258",
+    ".agents/skills/setup-matt-pocock-skills/SKILL.md": "9d137b9387f8422fa00355a066445c9a7cc2e2e95d1ad45aea8f8daa6b48a76e",
+    ".agents/skills/setup-matt-pocock-skills/agents/openai.yaml": "9527de0110541c45712319025155aeab8dc7d77c6ed6e5e83271bab1851ab939",
+    ".agents/skills/setup-matt-pocock-skills/classification-setup.md": "227259640c3bee44bc8476b883d6e60c39c667a6dcf856b33559e46b360396af",
+    ".agents/skills/setup-matt-pocock-skills/domain.md": "593a7042218689f1d24df89df14eaf0a20e19e0d0a7d479a01947ac78f0784b9",
+    ".agents/skills/setup-matt-pocock-skills/issue-tracker-github.md": "da619c7423506c905ceea62d4d71c955371c2f2c743aada92a01e3deffa93474",
+    ".agents/skills/setup-matt-pocock-skills/issue-tracker-gitlab.md": "ea175f73d193b3f55819c0ed9bbccf6ee0e70ad8f928e3d7607596c53380acd6",
+    ".agents/skills/setup-matt-pocock-skills/issue-tracker-local.md": "7dcda20a2eb4bdc89b95d1143423c0691309921cadae3132e6424f371030506e",
+    ".agents/skills/setup-matt-pocock-skills/triage-labels.md": "4f53c9b40ce2651e3611aa090eaedbd6dbc9b71ef8c5f7e65eac0d8263190d0d",
+    ".agents/skills/tdd/SKILL.md": "22f80050c29e9dbfc082dccebd39174718060abfdbded59ac02c4848738c7992",
+    ".agents/skills/tdd/agents/openai.yaml": "ea6f01cf1b8c06a4b0f5b649d74b1b8ce8685e72af1b38d70d877693e092af0b",
+    ".agents/skills/tdd/mocking.md": "3ceb807fdf4a47d6a93d4d9a891e5ba6d362a6247bd08adc451feebfc17361ef",
+    ".agents/skills/tdd/tests.md": "859f9e592c188fda4fc7277dd180e4ce9c7a2e13f6efe1f6f29eccc9d28c106a"
+  }
+}

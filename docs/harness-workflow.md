@@ -1,60 +1,31 @@
-# Workflow агента
+# Project execution procedure
 
-Для выполнения или возобновления поручения используй [orchestrate](../.agents/skills/orchestrate/SKILL.md).
-Этот workflow управляет работой внутри проекта; материалы набора остаются в `skills/`.
-Правила проекта определяют ресурсы, проверки и полномочия.
+[WORKFLOW.md](../WORKFLOW.md) owns session configuration and routes assigned work to the installed coordinator. This procedure owns project-specific overrides; distributable kit materials remain in `skills/`.
 
-## Начать или возобновить
+## Start or resume
 
-Подготовка спецификации, списка задач или отчёта не запускает выполнение.
-Выполнение начинается по явному поручению владельца.
-Используй выбранных владельцем агентов и модели; иначе наследуй текущую сессию.
-Проверь доступность нужных skills, зависимостей, доступов и выбранного runtime до назначения зависимой работы.
-Локальная работа остаётся в текущем runtime; доступы Cloud проверяй внутри его задачи.
-Если runtime не поддерживает нужное делегирование или модель, сохрани ограничение и реши его до зависимой работы.
+Preparing a specification, task list, or report does not assign execution. Use the owner's selected stages, agents, and models; otherwise inherit the active session. Check required skills, dependencies, accesses, and runtime before dependent work. Local work stays in the current runtime; verify Cloud access inside its assigned task. Record unsupported delegation/model selection and resolve it before dependent work.
 
-Перед работой прочитай поручение и критерии приёмки, проверь checkout, чужие изменения и действующих работников.
-Веди состояние в tracker проекта или устойчивом документе задачи, если tracker отсутствует.
-Сохраняй зависимости, владельцев ресурсов, решения, результаты, проверенные входы и следующий шаг.
-Обновляй состояние при назначении, приёмке, интеграции, решении владельца и передаче работы.
-При возобновлении сверяй записи с фактическими файлами, проверками и работниками.
-Сохраняй действующих работников и подтверждённые результаты; назначай только оставшуюся работу.
+Read the assignment and acceptance criteria; inspect checkout, unrelated changes, and live workers. Use the GitHub project tracker linked from WORKFLOW. Keep a durable task record under `docs/tasks/` with graph dependencies, resource owners, decisions, verified inputs, results, and next actions. If tracker access fails, preserve verified local work and disclose pending tracker delivery.
 
-## Выполнить и проверить
+Update evidence at dispatch, acceptance, integration, owner decisions, and handoff. On resumption reconcile records against actual files, checks, and workers; preserve active workers and accepted results, assigning only remaining work.
 
-Проект использует `main`: один работник владеет записью, редактура выполняется последовательно.
-Работник реализует задачу, проверяет результат, исправляет замечания и убирает свои завершённые ресурсы.
-Координатор определяет зависимости, принимает результаты и завершает разрешённый объём.
-Чтение и независимое review могут идти параллельно без записи.
+## Execute and review
 
-Для программной спецификации при необходимости создай временную integration branch и изолированные ветки работников.
-Объедини задачи одной спецификации в итоговый PR; независимые задачи передавай отдельно.
-Редактура сохраняет последовательную работу в `main` и содержательную проверку.
-Применяй обязательные проверки из `AGENTS.md` и проверки затронутого поведения.
-Перед приёмкой каждой задачи получи независимое review; замечания исправляет её работник.
-Перед завершением проверь все критерии, получи независимое review итогового результата и выполни финальные проверки.
-Сохраняй команды, фактические результаты, проверенный commit или снимок входов и доступные артефакты.
-Перед повторным использованием доказательств сверь фактические входы с проверенным commit или снимком.
-После изменения входов, сбоя или нового риска повтори затронутые проверки.
+For editorial assignments, the current checkout has one writer and changes proceed sequentially. This is the project's exception to implement-spec's integration branch and per-worker branch defaults. Read-only exploration and independent review may run concurrently. For a software specification requiring branch isolation, use a temporary integration branch and separate worker worktrees; combine one specification into its final PR and deliver independent assignments separately.
 
-## Передать результат
+Run bounded implementation, exploration, and review workers as native subagents of the active project task. An isolated worktree or read-only access to another repository does not create an independent owner session. Preserve foreign sessions and resources. If native workers are unavailable, record the limitation and leave independent review pending; resume in a native-capable session.
 
-Заверши разрешённые merge, передачу результата, закрытие задачи и уборку по правилам проекта.
-Deploy выполняй только в заказанном объёме.
-Набор не разрешает публикацию, оплату, изменение аккаунтов или доступ к секретам.
-Если действие требует отдельного согласия, дождись его до этого действия; независимую работу продолжай.
-Работу считай завершённой после проверки критериев и разрешённой передачи результата.
-Если остался блокер, сохрани выполненный объём, остаток и точное условие продолжения.
+Each writing task has one worker responsible for implementation, checks, review fixes, and owned-resource cleanup. The coordinator owns dependencies, acceptance, and authorized delivery. Use the installed TDD reference for code behavior; editorial work uses this procedure and meaningful document/behavior checks.
 
-После каждого проверенного этапа сообщи:
+Apply AGENTS checks and checks of changed behavior. Obtain independent per-ticket code-review before acceptance and independent final code-review of the complete result. Keep Standards and Spec axes distinct. Validate findings; commit fixes before affected re-review. A worker completion message alone does not establish acceptance or delivery.
 
-| Поле | Содержание |
-|---|---|
-| Результат | Наблюдаемое изменение и выполненный объём |
-| Просмотр | Доступная ссылка, артефакт или команда |
-| Проверка | Проверенные входы, результаты checks и независимого review |
-| Решение владельца | Конкретный вопрос либо «не требуется» |
-| Далее | Оставшаяся работа, блокеры и следующий шаг |
+Before completion verify every acceptance criterion and run final required checks. Record commands, actual results, checked commits or input snapshots, review dispositions, and accessible artifacts in the task/issue. Reuse evidence only while its checked inputs still apply. Repeat affected checks after changed inputs, failures, or unresolved concerns.
 
-Различай подготовленный diff, локальные проверки, CI, merge, применение и публикацию.
-Сообщение работника о завершении само по себе не подтверждает приёмку или передачу результата.
+## Deliver
+
+Complete authorized integration, tracker resolution, handoff, and cleanup under project gates. Deployment requires an assigned deployment scope. This library grants no authority to publish, pay, change accounts, or access secrets; existing owner authorization remains applicable within its scope.
+
+Clean up only owned completed resources after preserving evidence and confirming no live worker needs them. Finish after criteria and authorized delivery are verified. If blocked, record completed work, remaining work, and the exact condition for continuation.
+
+After each verified stage report observable result, inspection link/artifact/command, verified inputs and checks/review, any concrete owner decision, and remaining work. Distinguish prepared diff, local checks, CI, integration, application, and publication.

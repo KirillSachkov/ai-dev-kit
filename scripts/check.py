@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 IGNORED = {".git", ".reports", ".checks", ".venv", "__pycache__"}
 LINK = re.compile(r"\[[^\]]*\]\((<[^>]+>|[^\s)]+)(?:\s+\"[^\"]*\")?\)")
 NAME = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
-SKILL_FIELDS = {"name", "description", "license", "allowed-tools", "metadata"}
+SKILL_FIELDS = {"name", "description", "license", "allowed-tools", "metadata", "disable-model-invocation"}
 SECRET = re.compile(
     r"(?:sk-[A-Za-z0-9_-]{20,}|gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}"
     r"|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----|/[U]sers/[^/\s]+/)"
@@ -30,6 +30,8 @@ def discovery_link(path: Path, root: Path):
     if len(parts) != 3 or parts[:2] not in ((".agents", "skills"), (".claude", "skills")):
         return False
     target = root / "skills" / parts[2]
+    if parts[:2] == (".claude", "skills") and not target.is_dir():
+        target = root / ".agents" / "skills" / parts[2]
     try:
         return (
             not path.readlink().is_absolute()
@@ -105,6 +107,12 @@ def validate(root: Path):
                     errors.append(f"{relative}: invalid skill name")
                 if not fields.get("description"):
                     errors.append(f"{relative}: missing skill description")
+                if "disable-model-invocation" in fields and fields["disable-model-invocation"] not in {"true", "false"}:
+                    errors.append(f"{relative}: invalid manual invocation flag")
+                if fields.get("disable-model-invocation") == "true":
+                    adapter = path.parent / "agents" / "openai.yaml"
+                    if not adapter.is_file() or not re.search(r"(?m)^policy:\s*\n[ \t]+allow_implicit_invocation: false[ \t]*$", adapter.read_text()):
+                        errors.append(f"{relative}: missing manual Codex invocation policy")
                 if set(fields) - SKILL_FIELDS:
                     errors.append(f"{relative}: unexpected frontmatter fields")
         if path.suffix != ".md":

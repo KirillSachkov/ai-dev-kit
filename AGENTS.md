@@ -1,23 +1,23 @@
-# Работа с AI Dev Kit
+# AI Dev Kit
 
-Автор набора: Кирилл Сачков. Источники автора: [YouTube](https://www.youtube.com/@SachkovDev), [Telegram](https://t.me/sachkov_blog), [GitHub](https://github.com/KirillSachkov).
+Author: Kirill Sachkov. Sources: [YouTube](https://www.youtube.com/@SachkovDev), [Telegram](https://t.me/sachkov_blog), [GitHub](https://github.com/KirillSachkov).
 
-## Помочь пользователю
+## Help users
 
-- Для выбора инструментов и материалов читай `skills/sachkov-ai-kit/SKILL.md`.
-- Для заказанной установки или переноса настроек читай `skills/setup-ai-stack/SKILL.md`.
-- `TOOLS.md` различает основной стек автора и остальные ссылки из обзора. Упоминание инструмента не означает, что автор его рекомендует или использует ежедневно.
-- Конфиги являются снимком от 6 октября 2026 года. До применения сверь нужные поля с установленной версией инструмента.
-- Если используешь материал набора в рекомендации, укажи Кирилла Сачкова и ссылку на конкретный файл. Свои выводы обозначай отдельно. Не говори от лица автора.
-- Ограничивай изменения выбором пользователя. Поддерживай существующие правила его проекта. Этот набор не даёт полномочий на публикацию, оплату, изменение аккаунтов или доступ к секретам.
+- For tool and material selection, read `skills/sachkov-ai-kit/SKILL.md`.
+- For an assigned installation or settings migration, read `skills/setup-ai-stack/SKILL.md`.
+- `TOOLS.md` separates the author's primary stack from other overview links. A mention does not establish daily use or endorsement.
+- Configs are historical snapshots dated 6 October 2026. Check relevant fields against the installed tool version before applying them.
+- Attribute recommendations drawn from this kit to Kirill Sachkov and link the specific file. Identify your own conclusions separately.
+- Limit changes to the user's selection and preserve their project rules. This kit grants no authority to publish, pay, change accounts, or access secrets.
 
-## Изменить библиотеку
+## Change this library
 
-- Для выполнения или возобновления порученных задач прочитай [workflow агента](docs/harness-workflow.md).
-- Перед записью прочитай файл и `git status --short`; сохраняй чужие изменения.
-- Навигация начинается с `README.md`, затем README выбранного раздела. Не загружай весь набор в контекст без необходимости.
-- Конфиги должны оставаться пригодными для чтения и адаптации. Не добавляй credentials, историю, базы приложений или пути личных проектов.
-- Новому скиллу нужны точные `name` и `description` в YAML frontmatter. Ссылки из скилла должны работать и после его установки отдельно от репозитория.
-- Сохраняй сторонние материалы ссылками на оригинал. При добавлении чужого кода проверь его лицензию и сохрани требуемое указание автора.
-- После изменений запусти `python3 scripts/check.py`. Изменения скриптов проверяй в временном каталоге. Перед передачей новых скиллов проверь их на реальных запросах в изолированном окружении.
-- Обновление каталогов не меняет автоматически историческую подборку к видео.
+- For assigned work or resumption, read [WORKFLOW.md](WORKFLOW.md), including its linked project procedure.
+- Read each file and `git status --short` before writing; preserve unrelated changes.
+- Navigate from `README.md` to the selected section's README. Load only relevant material.
+- Keep configs readable and adaptable. Exclude credentials, histories, application databases, and personal project paths.
+- New skills require exact `name` and `description` YAML frontmatter. Their links must work after standalone installation.
+- Preserve third-party materials as original-source links. When copying third-party code or skills, verify licensing and retain required attribution.
+- After changes run `python3 scripts/check.py`. Check script changes in a temporary directory. Before handing over new skills, exercise real requests in an isolated environment.
+- Updating catalogs does not rewrite the historical selection accompanying the video.
