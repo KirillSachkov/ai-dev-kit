@@ -2,4 +2,4 @@ interface:
   display_name: "Implement Spec"
   short_description: "Implement a specification with parallel task workers"
 policy:
-  allow_implicit_invocation: false
+  allow_implicit_invocation: true

@@ -1,26 +1,26 @@
 # Installed pipeline provenance
 
-Four installed directories (`classify-change`, `code-review`, `setup-matt-pocock-skills`, and `tdd`)
-match [Kirill Sachkov's shared source](https://github.com/KirillSachkov/workspace/tree/5cdf9b286b6b3244fd498e6f12ed58f0684a4ee8/pipeline/skills)
+Seven installed directories (`classify-change`, `code-review`, `codebase-design`, `implement`,
+`implement-spec`, `setup-matt-pocock-skills`, and `tdd`) match
+[Kirill Sachkov's shared source](https://github.com/KirillSachkov/workspace/tree/5cdf9b286b6b3244fd498e6f12ed58f0684a4ee8/pipeline/skills)
 byte-for-byte at workspace commit `5cdf9b286b6b3244fd498e6f12ed58f0684a4ee8`.
 The complete upstream sync is `a496f5513d4a4cf889bc48e189e579f4b0bdf6aa` from Matt Pocock's skills.
-The [SHA-256 manifest](manifest.json) records source identities and every installed source hash.
-`.claude/skills/` retains relative aliases to these canonical project directories.
+The [SHA-256 manifest](manifest.json) records source identities, the installed set and every file hash.
+`.claude/skills/` contains relative aliases to these canonical project directories.
 The two public kit guides remain canonical in `skills/`.
 
-## Retained project exception
+## Dependency-complete installation
 
-`implement-spec` retains its self-contained execution and manual invocation policy:
-`SKILL.md` comes from workspace `0017667f4e7beb5e3b6f8428ae21441496cdfec9` and
-`agents/openai.yaml` from `d459183f46290ef74ede4f3eca349ab0682cbd0c`.
-The new canonical body requires the uninstalled `implement` skill and conversational routing.
-The owner excluded that migration and additions to the selected five-skill set from this update.
-`file_source_commits` overrides `source_commit` for those two files; their hashes remain verified.
+The owner's follow-up clarified that required dependencies belong to this update.
+`implement-spec` now delegates ticket execution to installed `implement`; its required TDD,
+review and classification support is present. `codebase-design` supplies TDD's conditional seam-design
+reference, including both linked design documents. No unrelated optional stages were added.
+Both implementation entrypoints retain the canonical model-invocable metadata. Setup stays manual.
 
-Installation does not execute setup. Its updated template describes a future accepted implementation
-route; any future setup must preserve this project's selection and authority until the owner assigns
-that migration. Existing workflow, deferred classification, and invocation exceptions remain in force.
-TDD can reference the uninstalled `codebase-design`; that pre-existing recommendation does not install it.
+Installation does not execute setup or change accepted project delivery authority.
+The project retains its explicit whole-specification entrypoint, main-session editorial writer,
+deferred classification, project checks and review gates. Only the conflicting manual invocation
+claim was removed from WORKFLOW; no broad conversational routing migration was performed.
 
 ## Source and license
 
@@ -35,7 +35,7 @@ The [MIT license notice](LICENSE-Matt-Pocock.txt) was originally fetched from th
 Copyright (c) 2026 Matt Pocock. Retain this notice when redistributing substantial upstream material.
 
 Project exceptions, tracker, resources, review, and delivery live in [WORKFLOW](../../WORKFLOW.md)
-and its project procedure. Preserve manual invocation in both SKILL frontmatter and
+and its project procedure. Preserve canonical invocation policy in both SKILL frontmatter and
 `agents/openai.yaml`; importing setup does not authorize its execution or install further skills.
 Consult WORKFLOW for the project classification state.
 

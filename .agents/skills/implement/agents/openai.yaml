@@ -1,0 +1,5 @@
+interface:
+  display_name: "Implement"
+  short_description: "Implement an agreed task with tests and review"
+policy:
+  allow_implicit_invocation: true

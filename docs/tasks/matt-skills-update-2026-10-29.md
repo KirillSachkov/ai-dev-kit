@@ -12,7 +12,7 @@ This project session owns the only writing task and its temporary source extract
 Initial worktree was clean; no local task workers or writer lock existed. Preserve all foreign resources.
 Session mode remains main; classification remains deferred. No product deployment.
 
-## Decisions and prepared result
+## Initial installation (superseded dependency decision)
 
 All 21 prior installed files matched manifest hashes and their recorded workspace sources.
 Copy four complete canonical directories: classify-change, code-review, setup-matt-pocock-skills, tdd.
@@ -22,7 +22,7 @@ aliases, project contracts, and license notice remain unchanged.
 Update provenance/manifest and the skills catalog's shared-source pointer; preserve the historical video selection.
 No new skills are installed; setup is inspected and copied, never executed.
 
-## Evidence and next actions
+## Initial review and publication evidence
 
 Project tracker: [ai-dev-kit #4](https://github.com/KirillSachkov/ai-dev-kit/issues/4).
 Initial GitHub discovery EOF was transient; tracker delivery succeeded on retry.
@@ -45,3 +45,22 @@ integration is a normal fast-forward push of main after the final documentation 
 The retained implement-spec version is an explicit scope limitation, not a pending approved migration.
 Publish completion and exact final commit in issue #4 and the requested external JSON result.
 Cleanup covers only this task's temporary extraction and body files after evidence delivery.
+
+
+## Dependency correction — same assignment
+
+Orca message `msg_611a6a2df812` clarifies required dependencies are authorized; it supersedes the
+initial decision to retain old implement-spec. Correction base and prior published head:
+`914db8afd7acb8e523cd2bd0b13918f839892cd3`. Continue issue #4, reopened for this correction.
+
+Copy exact canonical implement-spec and add implement plus codebase-design (TDD's conditional
+reference); existing tdd/code-review/classify-change complete the required support set.
+Preserve optional stages, own skills, session mode, deferred classification, editorial route and
+checks/review/delivery gates. Remove only conflicting manual invocation facts from workflow/procedure
+and provenance; keep the explicit whole-specification project pointer.
+
+Graph: dependency inspection → single-writer copy → isolated routing/real-request exercise →
+checks and independent focused Standards/Spec review → authorized push and updated RESULT JSON.
+This session remains sole repository writer; native exercises use isolated scratch inputs.
+Evidence for corrected input snapshot and review is pending; initial 21-file checks/review above
+remain historical and do not establish acceptance of the correction.

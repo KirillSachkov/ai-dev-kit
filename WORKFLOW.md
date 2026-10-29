@@ -3,7 +3,7 @@
 Session mode: main
 Classification: deferred
 
-For an explicit request to implement a whole specification, including natural-language assignments, use the installed manual [implement-spec](.agents/skills/implement-spec/SKILL.md). Read the [project procedure](docs/harness-workflow.md) for independent handoff, assigned coordination, editorial maintenance, workers, checks, review, and delivery.
+For an explicit request to implement a whole specification, including natural-language assignments, use the installed [implement-spec](.agents/skills/implement-spec/SKILL.md). Read the [project procedure](docs/harness-workflow.md) for independent handoff, assigned coordination, editorial maintenance, workers, checks, review, and delivery.
 
 Project tracker: [ai-dev-kit issues](https://github.com/KirillSachkov/ai-dev-kit/issues).
 The completed harness migration and its evidence are recorded in the [dated task record](docs/tasks/harness-cleanup-2026-10-18.md). Track each new assignment separately.

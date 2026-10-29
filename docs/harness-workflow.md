@@ -1,6 +1,6 @@
 # Project execution procedure
 
-[WORKFLOW.md](../WORKFLOW.md) owns session configuration and manual stage selection. This procedure governs assigned maintenance and project-specific overrides when a stage is selected; distributable kit materials remain in `skills/`.
+[WORKFLOW.md](../WORKFLOW.md) owns session configuration and stage selection. This procedure governs assigned maintenance and project-specific overrides when a stage is selected; distributable kit materials remain in `skills/`.
 
 For independent session launch, assigned coordination (including monitor-only), and whole-specification invocation, follow the pinned [shared harness contract](https://github.com/KirillSachkov/workspace/blob/0017667f4e7beb5e3b6f8428ae21441496cdfec9/docs/harness-workflow.md#independent-handoff-and-assigned-coordination) and its stage ownership and editorial/engineering routes. The sections below supply project exceptions and delivery rules.
 
