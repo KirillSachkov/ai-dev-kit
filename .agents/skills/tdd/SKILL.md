@@ -22,7 +22,7 @@ A **seam** is the public boundary you test at: the interface where you observe b
 Respect owner-agreed seams and critical behaviours from task preparation. Write down the seams
 under test. Choose remaining seams from the task's acceptance criteria and public interfaces.
 Ask the owner when intended behaviour or an agreed boundary is unclear; routine test selection
-belongs to the implementer.
+belongs to the implementer. Give each proposed seam a one-line note on what it catches and what it misses.
 
 When the shape of that interface is itself in question (how deep the module is, where the seam belongs, what the interface should expose), call the Skill tool with "codebase-design" for the vocabulary. It is the shared source of the module, interface, depth, seam, adapter, leverage and locality terms, and it is a reference to consult, not a session to run.
 

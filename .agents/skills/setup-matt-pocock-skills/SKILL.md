@@ -26,7 +26,7 @@ Look at the current repo to understand its starting state. Read whatever exists;
 - Root `AGENTS.md`, `WORKFLOW.md`, and any legacy `CLAUDE.md`: which rules exist, overlap, or conflict?
 - The installed runtime versions and their native `AGENTS.md` support; verify support before removing a legacy entry point.
 - Session isolation, existing launch commands, and the classification declaration and referenced policy, if present.
-- `GLOSSARY.md` and `GLOSSARY-MAP.md` at the repo root
+- `GLOSSARY.md` and `GLOSSARY-MAP.md` at the repo root, and the legacy `CONTEXT.md` / `CONTEXT-MAP.md`. If a legacy file exists, offer to `git mv` it to its `GLOSSARY` name and rewrite those names in `docs/agents/domain.md`.
 - `docs/adr/` and any `src/*/docs/adr/` directories
 - `docs/agents/`: does this skill's prior output already exist?
 - `.scratch/`: a sign that a local-markdown issue tracker convention is already in use
@@ -51,6 +51,8 @@ Default posture: these skills were designed for GitHub. If a `git remote` points
 - **Other** (Jira, Linear, etc.): ask the user to describe the workflow in one paragraph; the skill will record it as freeform prose
 
 Record the choice in `docs/agents/issue-tracker.md`. The GitHub and GitLab templates carry a "PRs as a request surface" flag, defaulted **off**. Leave it off and don't raise it: a user who wants external PRs in the triage queue can flip the flag in the file later.
+
+A GitHub or GitLab tracker needs a reachable repo. When the user picks one and no `git remote` points at that host, get the repo URL from them and wire it up (`git init` if needed, `git remote add origin <url>`) before going further. Done when `gh repo view` / `glab repo view` prints the project from inside this directory; if it can't, stop and tell the user what's missing.
 
 **Section B: Triage label vocabulary.** Skip this section entirely if the `triage` skill isn't installed (exploration told you), since an uninstalled skill needs no labels.
 
@@ -121,6 +123,8 @@ For assigned project work, read `WORKFLOW.md` for session mode, classification, 
 
 Include the `### Triage labels` sub-block, and write `docs/agents/triage-labels.md`, only when `triage` is installed and Section B ran. When it isn't, both are omitted.
 
+When Section B ran on GitHub or GitLab, create each configured label the tracker lacks (`gh label create` / `glab label create`).
+
 Then write the docs files using the seed templates in this skill folder as a starting point:
 
 - [issue-tracker-github.md](./issue-tracker-github.md): GitHub issue tracker
@@ -133,8 +137,13 @@ For "other" issue trackers, write `docs/agents/issue-tracker.md` from scratch us
 
 Write the accepted classification state in `WORKFLOW.md` using [classification setup](classification-setup.md).
 For enabled projects, write or retain the accepted policy and verify that `classify-change` is installed.
-Preserve the selected skills and their native manual invocation metadata. Use `implement-spec` for assigned
-specification execution; remove active `orchestrate` dependencies only within an assigned migration.
+For the accepted implementation route, install `implement`, `implement-spec`, `tdd`, `code-review`,
+and `classify-change` together. Route software/tooling implementation assignments, including an agreed
+result from conversation, to `implement` in `WORKFLOW.md`; it owns task capture and task-graph routing.
+Preserve project checks and gates when replacing an older direct route. Verify both entrypoints are
+model-invocable in Claude and Codex; preserve manual metadata for the other owner-invoked skills.
+An installation change outside the assigned setup remains a recommendation. Remove active
+`orchestrate` dependencies only within an assigned migration.
 
 ### 5. Done
 

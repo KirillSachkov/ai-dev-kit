@@ -1,13 +1,46 @@
 # Installed pipeline provenance
 
-The five directories under `.agents/skills/` were initially copied byte-for-byte, including references and Codex metadata, from [Kirill Sachkov's shared source](https://github.com/KirillSachkov/workspace/tree/d459183/pipeline/skills) at commit `d459183`. The [SHA-256 manifest](manifest.json) records the full baseline commit, per-file source overrides, and every installed source hash. `.claude/skills/` contains relative aliases to these canonical directories. The two public kit guides remain canonical in `skills/`.
+Four installed directories (`classify-change`, `code-review`, `setup-matt-pocock-skills`, and `tdd`)
+match [Kirill Sachkov's shared source](https://github.com/KirillSachkov/workspace/tree/5cdf9b286b6b3244fd498e6f12ed58f0684a4ee8/pipeline/skills)
+byte-for-byte at workspace commit `5cdf9b286b6b3244fd498e6f12ed58f0684a4ee8`.
+The complete upstream sync is `a496f5513d4a4cf889bc48e189e579f4b0bdf6aa` from Matt Pocock's skills.
+The [SHA-256 manifest](manifest.json) records source identities and every installed source hash.
+`.claude/skills/` retains relative aliases to these canonical project directories.
+The two public kit guides remain canonical in `skills/`.
 
-Only `implement-spec/SKILL.md` was subsequently updated byte-for-byte from shared commit `0017667f4e7beb5e3b6f8428ae21441496cdfec9` for [session boundaries and execution routing](https://github.com/KirillSachkov/workspace/blob/0017667f4e7beb5e3b6f8428ae21441496cdfec9/docs/harness-workflow.md). Its [pipeline adaptation record](https://github.com/KirillSachkov/workspace/blob/0017667f4e7beb5e3b6f8428ae21441496cdfec9/pipeline/README.md) applies to that file. All other installed files, including native manual metadata, retain the baseline source above. `file_source_commits` in the manifest overrides `source_commit` only for listed files.
+## Retained project exception
 
-Matt Pocock authored the upstream pipeline skills. Shared source records the last complete upstream sync as `dd400c3ad65e57c06f05e832e0aac92c7992f34d`; implement-spec was selectively restored from `49dd158d1076134a641b33efb035946536778336` and later adapted. The copied set preserves the source's TDD, classification/setup, review/evaluation routing, and native invocation adaptations. `classify-change` is a local shared addition. This installation is an adapted shared set, not pristine upstream.
+`implement-spec` retains its self-contained execution and manual invocation policy:
+`SKILL.md` comes from workspace `0017667f4e7beb5e3b6f8428ae21441496cdfec9` and
+`agents/openai.yaml` from `d459183f46290ef74ede4f3eca349ab0682cbd0c`.
+The new canonical body requires the uninstalled `implement` skill and conversational routing.
+The owner excluded that migration and additions to the selected five-skill set from this update.
+`file_source_commits` overrides `source_commit` for those two files; their hashes remain verified.
 
-The [MIT license notice](LICENSE-Matt-Pocock.txt) was fetched from the [immutable upstream restoration commit](https://github.com/mattpocock/skills/blob/49dd158d1076134a641b33efb035946536778336/LICENSE). The complete-sync commit has the same license. Copyright (c) 2026 Matt Pocock. Retain this notice when redistributing substantial upstream material. Source provenance and accepted adaptations are described in the [shared pipeline README](https://github.com/KirillSachkov/workspace/blob/d459183/pipeline/README.md) and [source harness contract](https://github.com/KirillSachkov/workspace/blob/d459183/docs/harness-workflow.md).
+Installation does not execute setup. Its updated template describes a future accepted implementation
+route; any future setup must preserve this project's selection and authority until the owner assigns
+that migration. Existing workflow, deferred classification, and invocation exceptions remain in force.
+TDD can reference the uninstalled `codebase-design`; that pre-existing recommendation does not install it.
 
-Project exceptions, tracker, resources, review, and delivery live in [WORKFLOW](../../WORKFLOW.md) and its project procedure. Preserve manual invocation in both SKILL frontmatter and `agents/openai.yaml`; importing setup does not authorize its execution or install further skills. Consult WORKFLOW for the project classification state.
+## Source and license
 
-To roll back this assignment, prepare and review a selective reversal from the pre-adoption commit recorded in the task, covering only installed skills, metadata, manifest/license, instructions, and validator changes. Check reverse-patch applicability against the current tree, preserve unrelated work and runtime state, run required checks/review, and record the resulting installed and project policy identities. Do not reset the entire repository.
+Matt Pocock authored the upstream pipeline skills; `classify-change` is a shared local addition.
+This is an adapted shared set, not pristine upstream. Accepted adaptations and the upstream corrections
+are recorded in the [pinned pipeline README](https://github.com/KirillSachkov/workspace/blob/5cdf9b286b6b3244fd498e6f12ed58f0684a4ee8/pipeline/README.md).
+The GitLab template preserves `glab mr list -F json` and uses `glab issue list -O json`.
+The source's wizard marker correction does not apply because `wizard` is not installed.
+
+The [MIT license notice](LICENSE-Matt-Pocock.txt) was originally fetched from the
+[immutable upstream restoration commit](https://github.com/mattpocock/skills/blob/49dd158d1076134a641b33efb035946536778336/LICENSE).
+Copyright (c) 2026 Matt Pocock. Retain this notice when redistributing substantial upstream material.
+
+Project exceptions, tracker, resources, review, and delivery live in [WORKFLOW](../../WORKFLOW.md)
+and its project procedure. Preserve manual invocation in both SKILL frontmatter and
+`agents/openai.yaml`; importing setup does not authorize its execution or install further skills.
+Consult WORKFLOW for the project classification state.
+
+To roll back this assignment, prepare and review a selective reversal from the pre-adoption commit
+recorded in the [task](../tasks/matt-skills-update-2026-10-29.md), covering only assigned installed
+skills and provenance. Check reverse-patch applicability, preserve unrelated work and runtime state,
+run required checks/review, and record the resulting installed and project policy identities.
+Do not reset the entire repository.
