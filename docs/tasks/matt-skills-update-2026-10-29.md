@@ -62,5 +62,45 @@ and provenance; keep the explicit whole-specification project pointer.
 Graph: dependency inspection → single-writer copy → isolated routing/real-request exercise →
 checks and independent focused Standards/Spec review → authorized push and updated RESULT JSON.
 This session remains sole repository writer; native exercises use isolated scratch inputs.
-Evidence for corrected input snapshot and review is pending; initial 21-file checks/review above
-remain historical and do not establish acceptance of the correction.
+Correction implementation and policy identity: `e98dc123051e060dcd9611c08e847215427b0f28`.
+Initial 21-file checks/review above remain historical; the following evidence accepts the corrected set.
+
+- `python3 scripts/check.py`: PASS, 85 files, 4 JSON, 6 TOML, 109 links, 9 skills.
+- `git diff --check` over both correction and integrated original assignment: PASS.
+- All 27 manifest hashes/source bytes and seven complete canonical directory inventories: PASS.
+- Seven shared Claude aliases, canonical model-invocable implement/implement-spec metadata,
+  manual setup policy, own guide aliases, and unchanged source/license: PASS.
+- Independent fresh native Standards review: PASS, 0 findings.
+- Independent fresh native Spec review: PASS, 0 findings.
+- Both reviews checked correction `914db8a...e98dc12` and interactions from original base `022df06`.
+
+## Isolated instruction exercise
+
+Before activation, snapshot exact candidate skills and project instructions, freeze the shared routing
+oracle separately, and give a fresh native worker only cases/instructions. Oracle SHA-256:
+`8c992f2711efca51af6a76fe634abfafc211dcc1a9c16e30432069c403cdf5db`.
+Candidate skill hashes are in the manifest; the verbatim report includes all 22 exercise-input hashes.
+[Verbatim exercise output](https://github.com/KirillSachkov/ai-dev-kit/issues/4#issuecomment-6503555026)
+SHA-256: `4227822f0eb11810ef403fc13e7846a931b3af2f6d741fdef42a4cfd0f722d94`.
+
+Evaluator comparison: cases 1–6 and 8–12 match the frozen oracle. Case 7 initially chose independent
+handoff correctly but omitted explicit receipt/location/finish criteria; its isolated inputs omitted
+the linked shared contract. Correct that input omission using the project's existing pinned contract
+`0017667f4e7beb5e3b6f8428ae21441496cdfec9`, without changing candidate instructions or the oracle.
+A separate fresh worker then explicitly verified delivery receipt, location report, finish and absence
+of supervision. Case 7: PASS on complete inputs. Retain both outputs; no unresolved mandatory mismatch.
+These selected cases cover routing, not statistical reliability; token/billing measurements unavailable.
+
+The worker also exercised a concrete scratch CSV-import request with codebase-design and TDD:
+one public import/read interface, real memory/file adapters, known-literal acceptance example and
+explicit catches/misses. Scope was interface/test planning only; no product edits or tracker writes.
+This bounded exercise and the routing cases validate the new skill inputs without deploying anything.
+
+## Corrected delivery
+
+Final evidence-only task-record commit leaves reviewed skill and policy inputs unchanged. Run the
+required checker after this record update. Fetch verified remote main at correction base `914db8a`,
+so normal fast-forward push is applicable. Record final remote identity, close issue #4 after posting
+completion evidence, and replace the requested RESULT JSON with the corrected installation identity.
+No CI workflow exists. No product deployment or unresolved blocker is part of this assignment.
+
